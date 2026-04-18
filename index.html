@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trusted News</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: radial-gradient(circle at center, #0f0f0f, #050505);
+  animation: fadeInPage 2s ease forwards;
+  opacity: 0;
+}
+
+/* PAGE FADE */
+@keyframes fadeInPage {
+  to { opacity: 1; }
+}
+
+/* TEXT */
+.text {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+
+  opacity: 0;
+  transform: scale(0.2) rotate(-720deg);
+
+  animation: swirlIn 2.5s ease-out forwards;
+  animation-delay: 0.5s;
+
+  letter-spacing: 2px;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.7),
+    0 0 25px rgba(0,150,255,0.6),
+    0 0 60px rgba(0,150,255,0.5);
+}
+
+/* SWIRL ANIMATION */
+@keyframes swirlIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(-720deg);
+    filter: blur(10px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1) rotate(20deg);
+    filter: blur(2px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: blur(0);
+  }
+}
+
+/* SUBTLE FLOAT AFTER */
+.text span {
+  display: inline-block;
+  animation: float 4s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="text">
+  <span>Whatever he said is correct.</span>
+</div>
+
+</body>
+</html>
